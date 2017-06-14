@@ -25,7 +25,8 @@ public class Main {
         int ordem, qtd_rotulos, i = 0, contRef = 0;
 
         ManipulaArquivo ma = new ManipulaArquivo();
-        List<String> lista = ma.abrirArquivo("C:\\Users\\Rafael\\Documents\\UTFPR\\5º Periodo\\Teoria dos Grafos\\APS.Teoria.dos.Grafos.2017.1\\instancias\\GROUP 1\\HDGraph20_20.txt");
+        List<String> lista = ma.abrirArquivo("/home/jennifer/Documents/UTFPR/5º Período/Teoria dos Grafos/GrafosAps/src/Arquivos/HDGraph20_20.txt");
+        System.out.println("1");
         System.out.println(lista.toString());
         System.out.println("");
         auxLinha = lista.get(i++).split(" ");
@@ -35,24 +36,30 @@ public class Main {
         qtd_rotulos = Integer.parseInt(auxLinha[1]);
 
         //GrafoMatrizAdjacencia matriz = new GrafoMatrizAdjacencia(ordem, aux);
-
-        int a = ordem-1;
         for (String string : lista) { //todas as linhas do arquivo
+            int a = ordem - 1;
             auxLinha = string.split(" ");
             auxMatriz = new int[ordem][ordem];
 //            refMatrizesArq[contRef++] = auxMatriz; //FAZER
-            for (int b = 0; b < ordem; b++) { // dentro de cada linha
+            for (int b = 0; b < ordem - 1; b++) { // dentro de cada linha
                 if (b < auxLinha.length) {
-                    auxMatriz[a--][b] = Integer.parseInt(auxLinha[b]);
+                    auxMatriz[b][a--] = Integer.parseInt(auxLinha[b]);
                 } else {
-                    auxMatriz[a--][b] = ordem;
+                    auxMatriz[b][a--] = ordem;
                 }
-                System.out.println(auxLinha[b]);
+                imprimeMatriz(auxMatriz, ordem-1, ordem-1);
 
             }
 
             System.out.println("");
         }
     }
-
+    static void imprimeMatriz(int matriz[][], int x, int y){
+        for (int i = 0; i < x; i++) {
+            for (int j = 0; j < y; j++) {
+                System.out.print(matriz[x][y]+" ");
+            }
+            System.out.println("");
+        }
+    }
 }
