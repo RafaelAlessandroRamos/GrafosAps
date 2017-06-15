@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  *
- * @author Rafael
+ * @author Jennifer && Rafael
  */
 public class ManipulaArquivo {
 

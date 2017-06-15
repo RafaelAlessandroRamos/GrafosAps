@@ -7,7 +7,7 @@ package Main;
 
 /**
  *
- * @author jennifer
+ * @author Jennifer && Rafael
  */
 public class ManipulaGrafo {
     int[][] matriz;

@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author jennifer
+ * @author Jennifer && Rafael
  */
 public class ManipulaMatriz {
 

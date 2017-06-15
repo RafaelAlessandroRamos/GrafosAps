@@ -7,7 +7,7 @@ package Main;
 
 /**
  *
- * @author jennifer
+ * @author Jennifer && Rafael
  */
 public class GrafoMatrizAdjacencia {
     private int ordemInicial;
