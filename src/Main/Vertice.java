@@ -11,7 +11,7 @@ package Main;
  */
 public class Vertice {
     
-    private String nome;
+    private String rotulo;
 //    private Vertice adjacente;
     
     
@@ -19,12 +19,12 @@ public class Vertice {
     public Vertice() {
     }
     
-    public Vertice(String nome) {
-        this.nome = nome;
+    public Vertice(String r) {
+        this.rotulo = r;
     }
 
-    public String getNome() {
-        return nome;
+    public String getRotulo() {
+        return rotulo;
     }
 
 //    public Vertice getAdjacente() {

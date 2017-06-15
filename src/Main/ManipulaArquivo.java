@@ -22,6 +22,12 @@ public class ManipulaArquivo {
     public ManipulaArquivo() {
     }
 
+    /**
+     * 
+     * @param texto é uma lista onde cada elemento é uma linha do arquivo
+     * @param caminho é o caminho do arquivo
+     * @return uma lista onde cada elemento é uma linha do arquivo
+     */
     public List<String> abrirArquivo(String caminho) {
         List<String> texto = new ArrayList<>();
         File arq = new File(caminho);
