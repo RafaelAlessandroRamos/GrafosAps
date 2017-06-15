@@ -5,6 +5,7 @@
  */
 package Main;
 
+import Grafo.ManipulaGrafo;
 import java.util.List;
 
 
@@ -25,6 +26,7 @@ public class Main {
         List<String> lista = ma.abrirArquivo(caminho);
         
         ManipulaGrafo manipulaGrafo = new ManipulaGrafo(lista);
+        manipulaGrafo.imprimeGrafos();
         
     }
 

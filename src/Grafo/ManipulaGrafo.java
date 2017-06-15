@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Main;
+package Grafo;
 
 import java.util.List;
 
@@ -17,8 +17,9 @@ public class ManipulaGrafo {
     List<String> lista;
     int ordem;
     int qtd_rotulos;
+    final int QTD_GRAFOS_ARQUIVO = 10;//constante
     //lista com os todos os 10 grafos de um arquivo;
-    GrafoMatrizAdjacencia[] listaGrafosArquivo = new GrafoMatrizAdjacencia[10];
+    GrafoMatrizAdjacencia[] listaGrafosArquivo = new GrafoMatrizAdjacencia[QTD_GRAFOS_ARQUIVO];
     int iterador = 0; // iterador da lista de grafos
 
     public ManipulaGrafo(List<String> l) {
@@ -90,10 +91,7 @@ public class ManipulaGrafo {
 
                 linha = this.ordem - 1; // tamanho que deve ser a linha na matriz (de 0 a ordem-1)
 
-                listaGrafosArquivo[iterador] = grafo; //adiciona o grafo na lista de grafos do arquivo
-
-                grafo.imprimeGrafo();
-                System.out.println("");
+                listaGrafosArquivo[iterador++] = grafo; //adiciona o grafo na lista de grafos do arquivo
 
                 grafo = new GrafoMatrizAdjacencia(ordem); // inicializa o próximo grafo grafo
 
@@ -106,6 +104,13 @@ public class ManipulaGrafo {
                 }
             }
             linha--;
+        }
+    }
+
+    public void imprimeGrafos() {
+        for (int i = 0; i < QTD_GRAFOS_ARQUIVO; i++) {
+            listaGrafosArquivo[i].imprimeGrafo();
+            System.out.println("");
         }
     }
 
