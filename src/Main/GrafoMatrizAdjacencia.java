@@ -10,52 +10,53 @@ package Main;
  * @author Jennifer && Rafael
  */
 public class GrafoMatrizAdjacencia {
-    private int ordemInicial;
-    private Vertice[] listaVertices;
-    private int matriz[][];
-    
 
-    public GrafoMatrizAdjacencia(int ordem, Vertice[] v) {
+    private int ordemInicial;
+    private Vertice grafo[][];
+
+    
+    public GrafoMatrizAdjacencia(int ordem) {
         this.ordemInicial = ordem;
-        listaVertices = v;
         iniciaMatriz();
     }
-    
-    private void iniciaMatriz(){
-        this.matriz = new int[ordemInicial][ordemInicial];
-        for (int i = 0; i < ordemInicial; i++) {
-            for (int j = 0; j < ordemInicial; j++) {
-                matriz[i][j] = ordemInicial;
+
+    private void iniciaMatriz() {
+        this.grafo = new Vertice[this.ordemInicial][this.ordemInicial];
+        for (int i = 0; i < this.ordemInicial; i++) {
+            for (int j = 0; j < this.ordemInicial; j++) {
+                Vertice vertice = new Vertice(this.ordemInicial + "");
+                this.grafo[i][j] = vertice;
             }
         }
     }
-    
-    public void adicionaAresta(int x, int y){
-        if(x < ordemInicial && y < ordemInicial){
-            matriz[x][y] = 1;
-        }else{
-            System.out.println("A aresta solicitada ("+x+", "+y+") não pode pertencer ao grafo");
+
+    public void adicionaAresta(int x, int y, String r) {
+        if (x < this.ordemInicial && y < this.ordemInicial) {
+            Vertice vertice = new Vertice(r);
+            this.grafo[x][y] = vertice;
+        } else {
+            System.out.println("A aresta solicitada (" + x + ", " + y + ") não pode pertencer ao grafo");
         }
-        
+
     }
-    
-     public void removeAresta(int x, int y){
-        if(x < ordemInicial && y < ordemInicial){
-            matriz[x][y] = 0;
-        }else{
-            System.out.println("A aresta solicitada ("+x+", "+y+") não pertence ao grafo");
+
+    public void removeAresta(int x, int y) {
+        if (x < this.ordemInicial && y < this.ordemInicial) {
+            Vertice vertice = new Vertice(this.ordemInicial + "");
+            this.grafo[x][y] = vertice;
+        } else {
+            System.out.println("A aresta solicitada (" + x + ", " + y + ") não pertence ao grafo");
         }
-        
+
     }
-    
-    public void imprimeMatriz(){
-        for (int i = 0; i < ordemInicial; i++) {
-            for (int j = 0; j < ordemInicial; j++) {
-                System.out.print(matriz[i][j]+"   ");
+
+    public void imprimeGrafo() {
+        for (int i = 0; i < this.ordemInicial; i++) {
+            for (int j = 0; j < this.ordemInicial; j++) {
+                System.out.print(this.grafo[i][j].getRotulo() + " ");
             }
             System.out.print("\n");
         }
     }
-    
-    
+
 }

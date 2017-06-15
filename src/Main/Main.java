@@ -24,7 +24,7 @@ public class Main {
         ManipulaArquivo ma = new ManipulaArquivo();
         List<String> lista = ma.abrirArquivo(caminho);
         
-        ManipulaMatriz manipulaGrafo = new ManipulaMatriz(lista);
+        ManipulaGrafo manipulaGrafo = new ManipulaGrafo(lista);
         
     }
 

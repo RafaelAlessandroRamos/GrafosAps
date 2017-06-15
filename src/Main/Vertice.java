@@ -10,15 +10,12 @@ package Main;
  * @author Jennifer && Rafael
  */
 public class Vertice {
-    
+
     private String rotulo;
-//    private Vertice adjacente;
-    
-    
 
     public Vertice() {
     }
-    
+
     public Vertice(String r) {
         this.rotulo = r;
     }
@@ -27,17 +24,4 @@ public class Vertice {
         return rotulo;
     }
 
-//    public Vertice getAdjacente() {
-//        return adjacente;
-//    }
-//
-//    public void setAdjacente(Vertice adjacente) {
-//        this.adjacente = adjacente;
-//    }
-
-    
-    
-    
-    
-    
 }
