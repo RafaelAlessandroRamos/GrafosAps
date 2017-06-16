@@ -34,6 +34,9 @@ public class GrafoMatrizAdjacencia {
 
     public void adicionaAresta(int x, int y, String r) {
         if (x < this.ordem && y < this.ordem) {
+            if(Integer.parseInt(r) < 10){
+                r = "0"+r;
+            }
             Vertice vertice = new Vertice(r);
             this.grafo[x][y] = vertice;
         } else {
