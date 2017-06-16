@@ -82,7 +82,7 @@ public class ManipulaGrafo {
 
         lista.remove(0); // remove a linha que contem a ordem e o rotulo
 
-        GrafoMatrizAdjacencia grafo = new GrafoMatrizAdjacencia(ordem); // inicializa o grafo
+        GrafoMatrizAdjacencia grafo = new GrafoMatrizAdjacencia(ordem, qtd_rotulos); // inicializa o grafo
 
         int linha = this.ordem - 1; // tamanho que deve ser a linha na matriz (de 0 a ordem-1)
         for (int i = 0; i < lista.size(); i++) { //para cada linha do arquivo
@@ -93,7 +93,7 @@ public class ManipulaGrafo {
 
                 listaGrafosArquivo[iterador++] = grafo; //adiciona o grafo na lista de grafos do arquivo
 
-                grafo = new GrafoMatrizAdjacencia(ordem); // inicializa o próximo grafo grafo
+                grafo = new GrafoMatrizAdjacencia(ordem, qtd_rotulos); // inicializa o próximo grafo grafo
 
             } else {
                 auxLinha = lista.get(i).split(" "); //vetor com os elementos da linha
@@ -101,6 +101,7 @@ public class ManipulaGrafo {
                 for (int coluna = 0; coluna < auxLinha.length; coluna++) { // dentro de cada linha
                     //le o arquivo na ordem certa e coloca na posicao invertida da matriz do grafo(porque tá de ponta cabeça e tals)
                     grafo.adicionaAresta(linha, coluna, auxLinha[coluna]);
+                    grafo.adicionaAresta(coluna, linha, auxLinha[coluna]);
                 }
             }
             linha--;

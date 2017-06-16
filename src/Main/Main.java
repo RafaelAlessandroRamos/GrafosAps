@@ -20,8 +20,9 @@ public class Main {
      */
     public static void main(String[] args) {
         String caminho = "/home/jennifer/Documents/UTFPR/5º Período/Teoria dos Grafos/GrafosAps/src/instancias/GROUP_1/HDGraph20_20.txt";
+//        String caminho = "/home/jennifer/Documents/UTFPR/5º Período/Teoria dos Grafos/APS.Teoria.dos.Grafos.2017.1/instancias/Group 2 with n=50/MDGraph50_62.txt";
         
-        //Abre o arquivo
+//Abre o arquivo
         ManipulaArquivo ma = new ManipulaArquivo();
         List<String> lista = ma.abrirArquivo(caminho);
         
