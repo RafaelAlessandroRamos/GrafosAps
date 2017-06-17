@@ -12,16 +12,47 @@ package Grafo;
 public class Vertice {
 
     private String rotulo;
+    private Vertice pai;
+    private int x;
+    private int y;
 
     public Vertice() {
     }
 
-    public Vertice(String r) {
+    public Vertice(String r, int x, int y) {
         this.rotulo = r;
+        this.x = x;
+        this.y = y;
+    }
+
+    public Vertice(String r, int x, int y, Vertice pai) {
+        this.rotulo = r;
+        this.x = x;
+        this.y = y;
+        this.pai = pai;
     }
 
     public String getRotulo() {
         return rotulo;
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public Vertice getPai() {
+        return pai;
+    }
+
+    public void setPai(Vertice pai) {
+        this.pai = pai;
+    }
+    
+    
+
+    
 }

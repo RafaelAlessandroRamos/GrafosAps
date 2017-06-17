@@ -26,7 +26,7 @@ public class GrafoMatrizAdjacencia {
         this.grafo = new Vertice[this.ordem][this.ordem];
         for (int i = 0; i < this.ordem; i++) {
             for (int j = 0; j < this.ordem; j++) {
-                Vertice vertice = new Vertice(this.rotulo + "");
+                Vertice vertice = new Vertice(this.rotulo + "", i, j);
                 this.grafo[i][j] = vertice;
             }
         }
@@ -37,7 +37,7 @@ public class GrafoMatrizAdjacencia {
             if(Integer.parseInt(r) < 10){
                 r = "0"+r;
             }
-            Vertice vertice = new Vertice(r);
+            Vertice vertice = new Vertice(r, x, y);
             this.grafo[x][y] = vertice;
         } else {
             System.out.println("A aresta solicitada (" + x + ", " + y + ") não pode pertencer ao grafo");
@@ -47,7 +47,7 @@ public class GrafoMatrizAdjacencia {
 
     public void removeAresta(int x, int y) {
         if (x < this.ordem && y < this.ordem) {
-            Vertice vertice = new Vertice(this.ordem + "");
+            Vertice vertice = new Vertice(this.ordem + "", x, y);
             this.grafo[x][y] = vertice;
         } else {
             System.out.println("A aresta solicitada (" + x + ", " + y + ") não pertence ao grafo");
